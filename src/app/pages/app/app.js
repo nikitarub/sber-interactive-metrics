@@ -26,7 +26,24 @@ export default class App extends Component {
     componentDidMount = () => {
         this.getCode();
         window.localStorage.setItem('hi', '0');
+
+        const context = this;
+        document.addEventListener("keypress", function(e) {
+            if (e.keyCode === 13) {
+                context.toggleFullScreen();
+            }
+        }, false);
     }
+
+    toggleFullScreen = () => {
+        if (!document.fullscreenElement) {
+            document.documentElement.requestFullscreen();
+        } else {
+          if (document.exitFullscreen) {
+            document.exitFullscreen(); 
+          }
+        }
+      }
 
     catchExit = () => {
         event.preventDefault();
