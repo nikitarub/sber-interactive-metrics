@@ -1,2 +1,11 @@
 # sber-interactive-metrics
-Metrics visualisation
+Визуализация посещения сайта sbergraudate.ru с использованием распознавания жестов с камеры (tensorflow.js).
+
+## Использование (локальное):
+1. Ввести данные конфигурации в файл metrics.config.js
+   1. client_id – ID приложения, которому доверен доступ, можно получить из списка доверенных приложений
+   2. client_secret – секретный ключ приложения, также можно получить из списка oauth
+   3. counter_id – идетификатор счетчика метрики
+2. `npm run build`
+3. `npm start`
+4. зайти в браузере на [http://loaclhost:8080/](http://loaclhost:8080/)
